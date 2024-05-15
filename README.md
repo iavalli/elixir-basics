@@ -48,7 +48,7 @@ Mixing up Elixir with blockchain or AI / ML seems to be interesting, too.
 
 Some videos to answer the Why question:
 https://www.youtube.com/watch?v=4cnmyQJToKM
-https://www.youtube.com/results?search_query=getting+my+fullstack+back
+https://www.youtube.com/watch?v=C7y4Bs9Jbho
 https://www.youtube.com/watch?v=MZvmYaFkNJI
 https://www.youtube.com/watch?v=BNmM2PyHs2c&ab_channel=ElixirToronto
 https://www.youtube.com/watch?v=lxYFOM3UJzo
