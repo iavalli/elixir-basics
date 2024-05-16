@@ -15,6 +15,7 @@ end
 # |>  is a pipe operator. An argument str is sent |> to the function(s)
 # running in CLI: $ elixir lesson1.exs
 
+
 # variables have no type annotation in Elixir. Define, then call a var.
 # var names: snake_case, begins with lowcase letter or _ . Ends with lowcase or _ or ! or ?
 # var may be changed but stick to not the initial data type.
