@@ -1,12 +1,13 @@
 # elixir-basics
-The code is based on the free Elixir course(RU) produced by Ilya Krukowski: 
-https://www.youtube.com/playlist?list=PLWlFXymvoaJ_SWXOOm2JSqv86ZBkQ9-zo
+If you have an MVP idea and wish it'd be developed in Elixir, 
+feel free to contact me in any way, and we'll try to cooperate for this purpose.
 
-Author's code and Github:
+The code is based on the free Elixir course(RU) produced by Ilya Krukowski: https://www.youtube.com/playlist?list=PLWlFXymvoaJ_SWXOOm2JSqv86ZBkQ9-zo
+
+Ilya's code and Github:
 https://github.com/bodrovis-learning/Elixir-YT-Series/tree/master
 
 Content by lessons:
-
 1. Intro, data types and functional programming
 2. Pattern matching
 3. Modules, functions, r, margin conditions
@@ -20,31 +21,29 @@ Content by lessons:
 11. Protocols, polymorphism
 12. Metaprogramming, macroses, quote/unqoute, dinamic connection, AST
 
-Why not a fork of the original code? Because the best way to follow the course is 
-to experiment in CLI or IDE by yourself.
-Use ElixirLS extension for VSCode or bash $ iex 
-after installing:
+Why not a fork of the original code? Because the best way to follow the course is to experiment in CLI or IDE.
 
+Try it by yourself:
 https://elixir-lang.org/install.html - install Elixir
 https://www.erlang.org/downloads - install Erlang/OTP (if it didn't come with the Elixir installation)
 
-The course is recorded in Russian, but in this repo everything will be in English.
-I hope to add some useful comments and some info from other learning sources (which will be listed below).
+VSCode: install ElixirLS extension, create "filename.ex" or "filename.exs" file
+In CLI: $ iex   (double Ctrl+C to quit)
+
+The course is recorded in RU, but here everything is in EN.
+I add comments and some info from other learning sources (listed below).
 
 WHY ELIXIR?
+- most loved and highly paid prog lang
+- mostly used by Senior devs with many years of experience (Stackoverflow research 2023).
+- I believe in standing on giants' shoulders
+- hope that Elixir will become more popular with time because it boosts developers' productivity
+- saves time and money for a business and allows to hire enthusiastic devs (acc to Elixir forums and googling)
+- web2 and web3 stack have the same (JS frameworks based) frontend part. I hope to use PETAL stack for web3 projects later.
 
-According to Stackoverflow developer research, Elixir is one of the most loved and highly paid technologies.
-Elixir is mostly used and loved by Senior devs with many years of experience.
-I believe that Elixir will become more popular because it boosts developers' productivity
-and saves time and money for a business.
+As someone who once spent 4 hours choosing a shade for a webpage background, I now obsessively minimize tools and time spent on the FE. LiveView allows to generate HTML on the server. Mixing up Elixir with blockchain or AI/ML seems to be interesting, there are many cool technologies to explore and use on the BE, and that is my main focus.
 
-web2 and web3 stack have the same (JS frameworks based) frontend part.
-Fullstack devs have more chances to be hired.
-
-As someone who once spent 4 hours choosing a shade for the background of my first web page, 
-I'd like to minimize tools and time spent on the frontend, and focus mostly on the backend.
-My goal is to master quick fullstack web2 and web3 MVP and scalable web apps development.
-Mixing up Elixir with blockchain or AI / ML seems to be interesting, too.
+My final goal is to master quick fullstack web2 and web3 MVP and scalable, high load (maybe blockchain/AI/ML) web apps development, avoiding dealing with JS, HTML and CSS as much as possible. 
 
 Some videos to answer the Why question:
 https://www.youtube.com/watch?v=4cnmyQJToKM
@@ -53,53 +52,42 @@ https://www.youtube.com/watch?v=MZvmYaFkNJI
 https://www.youtube.com/watch?v=BNmM2PyHs2c&ab_channel=ElixirToronto
 https://www.youtube.com/watch?v=lxYFOM3UJzo
 
-This basics repo will cover (hopefully):
-
-Elixir basics
-Phoenix
-LiveView
-PETAL stack (Phoenix, Elixir, TailwindCSS, Alpine.js, LiveView)
-
-And maybe also:
-Ecto
-ExUnit
+This repo will cover basics of:
+PETAL stack (Phoenix, Elixir, TailwindCSS, Alpine.js, LiveView) - focused on BE
+And maybe:
+Ecto (for DBs)
+ExUnit (for testing)
 Ash
-Absinthe (I'll try to focus more on GraphQL than REST API)
+Absinthe (for GraphQL)
+some libs for blockchain/AI/ML
 
-Some related pet projects (if I'll manage to make them) will be listed below.
+Related pets will be listed below as github links.
+Note for fererences and comparisons: my first lang is Python.
 
 LEARNING SOURCES:
-
 FREE COURSES AND TUTORIALS
-
+list=PLWlFXymvoaJ_SWXOOm2JSqv86ZBkQ9-zo - ELixir & functional programming course by Ilya Krukowski (RU), also Ilya has a Solidity course on his channel. The frame of Elixir basics code files here.
 https://code-basics.com/languages/elixir - interactive Elixir basics training - Hexlet based, EN / RU
-
-https://elixirschool.com/ - lessons on different Elixir topics from basics to OTP, testing, Ecto and libraries
-
+https://elixirschool.com/ - lessons on different Elixir topics from basics to OTP, testing, Ecto and libraries in diff langs
+https://www.youtube.com/playlist?
 https://www.youtube.com/playlist?list=PLYuTgpYrBrVKnzanStbVGD09Cdx4YNEpO - Yuri Zhloba Elixir course (RU), also Yuri has an Erlang course on his channel.
-
 https://www.youtube.com/@pragmaticstudio - some videos, also have paid courses which many people recommend, and books on Elixir and its stack.
 
-
 OFFICIAL DOCS
-
 https://elixir-lang.org/docs.html - Elixir official documentation (also has a nice LEARNING section with a list of sources)
-
-https://hexdocs.pm/elixir/1.16.2/Kernel.html - Kernel - the core of Elixir language
-
+https://hexdocs.pm/elixir/1.16.2/Kernel.html - Kernel - the standard library of Elixir language
 https://hexdocs.pm/phoenix/Phoenix.html - Phoenix Framework (also has Guides section)
-
 https://hexdocs.pm/phoenix/overview.html - Phoenix framework Guide on the Hexdocs (also look for docs for any published Elixir package here)
-
 https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html - Phoenix LiveView docs (and guide)
 
-BOOKS
+docs for every Elixir published module may be found on hexdocs.pm.
 
+BOOKS
+"Grokking Simplicity" - Eric Normand ("Грокаем функциональное мышление" - Эрик Норманд)
+"Introducing Elixir" Simon St. Laurent, J. David Eisenberg. - 2nd ed.("Введение в Elixir" - Сенлорен С, Эйзенберг Д.)
 "Elixir in Action" - Saša Jurić
 "Phoenix in Action" - Geoffrey Lessel
 "Programming Elixir" - Dave Thomas
 "Programming Phoenix LiveView" - Bruce A. Tate, Sophie DeBenedetto
 
 (to be continued..)
-
-

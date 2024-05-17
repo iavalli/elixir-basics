@@ -9,6 +9,9 @@ defmodule Solution do
 end
 
 # 2 - the same as no.1, defining modules
+# Module names: PascalCase [A-Z a-zA-Z, 0-9, _]
+# var names: snake_case [a-zA-Z, 0-9, _, ?,!]
+
 # 3
 defmodule Solution do
   # BEGIN (write your solution here)
@@ -32,12 +35,18 @@ defmodule Solution do
   defp text_for_hello, do: "Hello, World"
 end
 
+text = Solution.hello() # will work
+text = Solution.text_for_hello() # will return an error - (UndefinedFunctionError)
+
 #4 string operations.
 # String concatenation: "string1" <> "string2"
 # :ascii - applies upcase to latin letters,
 # :default - to all letters where possible
 # :greek - is used for Greek letters and context dependent
 # :turkic - for dotless letters (for ex. in Turkish)
+# function arity is the number of argments it accepts: join_and_upcase/2
+# stdlib functions of Kernel for Integer, List, String can be used without "Kernel."
+# Kernel docs - https://hexdocs.pm/elixir/Kernel.html#content
 
 defmodule Solution do
   def join_and_upcase(str1, str2) do
