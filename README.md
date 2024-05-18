@@ -37,13 +37,8 @@ WHY ELIXIR?
 - most loved and highly paid prog lang
 - mostly used by Senior devs with many years of experience (Stackoverflow research 2023).
 - I believe in standing on giants' shoulders
-- hope that Elixir will become more popular with time because it boosts developers' productivity
-- saves time and money for a business and allows to hire enthusiastic devs (acc to Elixir forums and googling)
-- web2 and web3 stack have the same (JS frameworks based) frontend part. I hope to use PETAL stack for web3 projects later.
-
-As someone who once spent 4 hours choosing a shade for a webpage background, I now obsessively minimize tools and time spent on the FE. LiveView allows to generate HTML on the server. Mixing up Elixir with blockchain or AI/ML seems to be interesting, there are many cool technologies to explore and use on the BE, and that is my main focus.
-
-My final goal is to master quick fullstack web2 and web3 MVP and scalable, high load (maybe blockchain/AI/ML) web apps development, avoiding dealing with JS, HTML and CSS as much as possible. 
+- Elixir boosts developers' productivity
+- saves time and money for a business
 
 Some videos to answer the Why question:
 https://www.youtube.com/watch?v=4cnmyQJToKM
