@@ -67,3 +67,22 @@ a < :false # false
 
 # nil value means no value, the same as null in Python, and it's also a sintax sugar for :nil atom
 nil == :nil
+
+# Tuples
+# immutable, sorted, elements of any data type
+
+t1 = {1, "three", :four, false}
+t2 = {2, {3, 4}, :cat, t1}
+
+# May be returned from a function.
+{:ok, 200}
+{:error, "Cannot load data"}
+
+# receiving elements from a tuple: elem{tuple,} element_number (begin with 0)
+elem{:ok, 200}, 0 # imperative style
+{:ok, 200} |> elem(0) # functional style. Parantheses needed.
+
+# mutating data in the tuple == making a new tuple
+# new_tuple = old_tuple |> put_elem(element_number, new value)
+t1 = {1, "three", :four, false}
+t3  = t1 |> put_elem(1, "four")
