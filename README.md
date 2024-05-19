@@ -57,7 +57,7 @@ Absinthe (for GraphQL)
 some libs for blockchain/AI/ML
 
 Related pets will be listed below as github links.
-Note for fererences and comparisons: my first lang is Python.
+Note for comparisons: my first lang is Python.
 
 LEARNING SOURCES:
 FREE COURSES AND TUTORIALS
