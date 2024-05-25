@@ -27,8 +27,10 @@ Try it by yourself:
 https://elixir-lang.org/install.html - install Elixir
 https://www.erlang.org/downloads - install Erlang/OTP (if it didn't come with the Elixir installation)
 
-VSCode: install ElixirLS extension, create "filename.ex" or "filename.exs" file
-In CLI: $ iex   (double Ctrl+C to quit)
+VSCode: install ElixirLS extension, create "filename.ex" or "filename.exs" file.
+To run the file from CLI: $ iex filename.ex
+
+In CLI: $ iex   (to quit, type either double Ctrl+C or System.halt)
 
 The course is recorded in RU, but here everything is in EN.
 I add comments and some info from other learning sources (listed below).

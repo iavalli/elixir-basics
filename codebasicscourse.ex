@@ -8,9 +8,20 @@ defmodule Solution do
   end
 end
 
-# 2 - the same as no.1, defining modules
-# Module names: PascalCase [A-Z a-zA-Z, 0-9, _]
-# var names: snake_case [a-zA-Z, 0-9, _, ?,!]
+# 2 - naming
+# Modules' names: CamelCase [A-Z a-zA-Z, 0-9, _, and . for structure organization]
+# variables' names: snake_case [a-zA-Z, 0-9, _, and ? or ! in the end]
+# functions' names: same as variables, ? -
+
+defmodule FirstModule do
+  defmodule IsertedModule do
+    ...
+  end
+end
+
+defmodule SecondModule do
+  ...
+end
 
 # 3
 defmodule Solution do
@@ -78,12 +89,209 @@ defmodule Solution do
 end
 
 #6 booleans and logic operators
+# and, or, not work only with true and false
+true and true  # true
+true and false # false
+true or true   # true
+true or false  # true
+not true       # false
+not false      # true
 
+# relaxed operators &&, ||, ! work wuth any data type
+42 && true   # true
+false && nil # false
+true || 42   # true
+true || nil  # true
+! nil        # true
+! 42         # false
+
+# && returns in successful case last truthy argument, otherwise returns first falsy argument
+true && 42  # success, 42
+42 && true  # success, true
+false && 42 # unsuccessful, false
+nil && 42   # unsuccessful, nil
+42 && nil   # unsuccessful, nil
+false && nil # false
+nil && false # nil
+
+# || - in successful case returns truthy argument, otherwise - last falsy.
+42 || false  # 42
+false || 42  # 42
+nil || false # false
+false || nil # nil
+
+# ! - returns true or false for any argument
+! 42    # false
+! true  # false
+! false # true
+! nil   # true
+
+# All logic operators are lazy
+IO.puts("a") && IO.puts("b") # => a b
+IO.puts("a") || IO.puts("b") # => a
+true or IO.puts("b")         # true
+false and IO.puts("b")       # false
+
+# May be used to return errors
+do_something() || IO.puts("error")
+
+task: any? returns true if any of arguments is truthy (for booleans)
+truthy? returns second argument if first argument is truthy (for any data type)
+defmodule Solution do
+  # BEGIN (write your solution here)
+  def any?(a, b, c, d) do
+    a or b or c or d
+  end
+  def truthy?(a, b) do
+    a && b
+  end
+  # END
+end
 
 #7 attributes
+# used for constants in module outside of the function, cannot be called outside of the module
+defmodule MyModule do
+  @magic_number 8
+
+  def do_magic(num) do
+    num * @magic_number
+  end
+end
+
+MyModule.do_magic(10) # 80
+MyModule.@magic_number # error
+
+# may be changed in the module. Compilator takes the last attribute value
+defmodule MyModule do
+  @magic_number 8
+
+  def cast_magic() do
+    @magic_number
+  end
+
+  @magic_number 0
+
+  def do_magic() do
+    @magic_number
+  end
+end
+
+MyModule.cast_magic() # 8
+MyModule.do_magic() # 0
+
+#special attributes for generating the documwntation
+# @moduledoc - next line after defining the module
+# @doc - a line before defining the function
+
+defmodule MyModule do
+  @moduledoc "My attributes exercise module."
+
+  @magic_number 8
+
+  @doc "Do some magic calculations."
+  def do_magic(num) do
+    num * @magic_number
+  end
+end
+
+# attribute accumulation
+
+defmodule MyModule do
+  Module.register_attribute __MODULE__, :magic_values, accumulate: true
+
+  @magic_values 8
+  @magic_values :some
+  @magic_values "hello"
+
+  def do_magic() do
+    @magic_values
+  end
+end
+
+MyModule.do_magic # [8, :some, "hello"]
+
+#task: define inside the module following attributes
+# number_attr, value: 10
+# boolean_attr, value: false
+# hello_world_attr, value: "Hello, World!"
+
+defmodule Solution do
+  defmacro __using__(_) do
+    quote do
+      @number_attr 10
+
+      @boolean_attr false
+
+      @hello_world_attr "Hello, World!"
+    end
+  end
+end
+
 
 #8 Erlang interoperability
+# All Erlang libraries may be used in Elixir code.
+# Erlang modules are presented as atoms:
+# :os , :timer
+
+:timer.seconds(5)
+# => 5000
+
+:os.cmd(~c"whoami")
+# => ~c"root\n"
+
+:os.getenv(~c"SHELL")
+# => ~c"/bin/zsh"
+
+# To use Erlang modules, type in mix.exs
+def deps do
+  [{:png, github: "yuce/png"}]
+end
+
+#usage
+png =
+  :png.create(%{:size => {30, 30}, :mode => {:indexed, 8}, :file => file, :palette => palette})
+#
+
+# binary strings and character list
+# in Elixir
+is_list('Example') # => true
+is_list("Example") # => false
+is_binary("Example") # => true
+<<"Example">> === "Example"  # => true
+
+# in Erlang
+is_list('Example'). # => false
+is_list("Example"). # => true
+is_binary("Example"). # => false
+is_binary(<<"Example">>). # => true
+
+# old Erlang libraries do not support binary strings
+# Elixir strings should be turned to char lists using to_charlist function
+
+#Erlang function for words counting doesn't work with binary string
+:string.words("Hello World")  # error
+
+#solution:
+words = to_charlist("Hello World")
+:string.words(words) # => 2
+
+# or the same with sigel
+:string.words(~c"Hello World") # => 2
+
+# in Erlang, vars begin with A-Z and cannot be mutated (redefined).
+
+# task: a function which turns hours to milliseconds
+defmodule Solution do
+  def hours_to_milliseconds(hours) do
+    :timer.hours(hours)
+  end
+
+end
+
+
 #9 Sigels
+# ~c
+
 # Data types
 #10 atoms and tuples
 #11 lists
